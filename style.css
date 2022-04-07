@@ -280,3 +280,159 @@ a {
         font-size: 19px;
     }
 }
+
+h3 {
+    font-weight: normal;
+    font-size: 23px;
+    padding: 70px 0px;
+}
+
+.services {
+    margin: auto;
+    width: 1150px;
+}
+
+@media screen and (max-width: 1200px) {
+    .services {
+        width: 950px;
+    }
+}
+
+@media screen and (max-width: 995px) {
+    .services {
+        width: 730px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .services {
+        padding: 0px 20px;
+        width: 100%;
+    }
+}
+
+.servicesWrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.service {
+    position: relative;
+    display: flex;
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: white;
+    width: 550px;
+    flex-direction: row;
+    align-items: center;
+    text-align: right;
+}
+
+.service:nth-child(even) {
+    text-align: left;
+    flex-direction: row-reverse;
+}
+
+.service:nth-child(even) .service-icon {
+    margin-left: 0px;
+    margin-right: 25px;
+}
+
+@media screen and (max-width: 1200px) {
+    .service {
+        width: 460px;
+    }
+}
+
+@media screen and (max-width: 995px) {
+    .service {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .service,
+    .service:nth-child(even) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+.serviceDescription {
+    width: 395px;
+}
+
+h4 {
+    margin-bottom: 25px;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.serviceDescription p {
+    font-size: 15px;
+    color: #9ba6b0;
+}
+
+.blue {
+    color: rgb(64, 173, 228);
+}
+
+.green {
+    color: rgb(29, 216, 29);
+}
+
+.blackLink:hover {
+    color: black;
+}
+
+.serviceImg {
+    display: flex;
+    border: 2px solid #e4e4e4;
+    margin-left: 25px;
+    border-radius: 50px;
+    width: 85px;
+    height: 85px;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+.serviceImg:hover {
+    color: orange;
+    border-color: orange;
+    transform: rotate(360deg);
+    transition-duration: 0.5s;
+}
+
+@media screen and (max-width: 1200px) {
+    .serviceDescription {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 995px) {
+    .serviceDescription {
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .serviceDescription {
+        width: 100%;
+        text-align: center;
+        order: 2;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .serviceImg {
+        order: 1;
+        margin: 15px 0px;
+    }
+}
