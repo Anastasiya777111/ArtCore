@@ -10,6 +10,8 @@ const elemRespHeader = document.querySelector(".respMenuItems");
 
 const hambMenu = document.querySelector(".hamburger");
 
+const elemArticles = document.querySelector(".articles");
+
 searchBtn.addEventListener("click", () => {
   clickSearchBtn.classList.remove("closeBtnSearch");
 });
@@ -54,3 +56,32 @@ function elemHeaderMenu(el, mainItems, dropdown) {
 
 elemHeaderMenu(elemHeader, "mainItems", "dropdownMenu");
 elemHeaderMenu(elemRespHeader, "", "dropdownRespMenu");
+
+function getArticles(el) {
+  return `
+  <div class="article ${el.order}">
+          <div class="imgArticle">
+            <img class="photoArticle" src="${el.img}" />
+            <div class="hoverImg">
+              <div class="hoverBtn imageHoverBtn">
+                <a class="fas fa-link" href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="descriptionArticle">
+            <h4 class="titleArticle">${el.title}</h4>
+            <p class="dataArticle">${el.data}</p>
+            <p class="textArticle">${el.text}</p>
+          </div>
+        </div>
+  `;
+}
+
+function elemGetArticles() {
+  for (let i = 0; i < articles.length; i++) {
+    const articlesHtml = getArticles(articles[i]);
+    elemArticles.insertAdjacentHTML("beforeEnd", articlesHtml);
+  }
+}
+
+elemGetArticles();

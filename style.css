@@ -11,7 +11,11 @@ body {
 .menuItems,
 .text,
 .respMenuItems,
-.description p {
+.description p,
+.dataArticle,
+.textArticle,
+label,
+.submitButton {
     font: 400 15px 'Roboto';
 }
 
@@ -50,7 +54,9 @@ header {
 
 .socialBtn,
 .btnMenu,
-.hamburger {
+.hamburger,
+.hoverBtn,
+.submitButton {
     font-size: 13px;
     margin: 1px;
     border: 1.5px solid #bcbbbb;
@@ -81,6 +87,12 @@ header {
     .navMenu {
         padding: 40px 20px;
     }
+}
+
+.menuBtns,
+.menuItems {
+    display: flex;
+    flex-direction: row;
 }
 
 .clickBtnSearch {
@@ -115,12 +127,6 @@ header {
     text-align: center;
 }
 
-.menuBtns,
-.menuItems {
-    display: flex;
-    flex-direction: row;
-}
-
 @media screen and (max-width: 900px) {
     .menuItems {
         display: none;
@@ -142,8 +148,10 @@ a {
     color: black;
 }
 
-.menuItems a:hover {
+.menuItems a:hover,
+.titleArticle:hover {
     color: orange;
+    cursor: pointer;
 }
 
 .menuItems>li {
@@ -281,34 +289,34 @@ a {
     }
 }
 
-h3 {
-    font-weight: normal;
-    font-size: 23px;
-    padding: 70px 0px;
-}
-
-.services {
+.container {
     margin: auto;
     width: 1150px;
 }
 
 @media screen and (max-width: 1200px) {
-    .services {
+    .container {
         width: 950px;
     }
 }
 
 @media screen and (max-width: 995px) {
-    .services {
+    .container {
         width: 730px;
     }
 }
 
 @media screen and (max-width: 770px) {
-    .services {
+    .container {
         padding: 0px 20px;
         width: 100%;
     }
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 23px;
+    padding: 70px 0px;
 }
 
 .servicesWrap {
@@ -368,12 +376,15 @@ h3 {
 }
 
 h4 {
-    margin-bottom: 25px;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 25px;
 }
 
-.serviceDescription p {
+.serviceText,
+.textArticle,
+.contactText,
+label {
     font-size: 15px;
     color: #9ba6b0;
 }
@@ -434,5 +445,226 @@ h4 {
     .serviceImg {
         order: 1;
         margin: 15px 0px;
+    }
+}
+
+.articles {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
+    max-height: 1660px;
+}
+
+@media screen and (max-width: 995px) {
+    .articles {
+        max-height: 2500px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .articles {
+        max-height: 100%;
+    }
+}
+
+.article {
+    width: 360px;
+    margin-bottom: 30px;
+    background-color: white;
+    transition: all 0.5s linear;
+}
+
+@media screen and (max-width: 1200px) {
+    .article {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 995px) {
+    .article {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .article {
+        width: 100%;
+    }
+}
+
+.firstArticle {
+    order: 1;
+}
+
+.secondArticle {
+    order: 2;
+}
+
+.thirdArticle {
+    order: 3;
+}
+
+.fourthArticle {
+    order: 4;
+}
+
+.fifthArticle {
+    order: 5;
+}
+
+.sixthArticle {
+    order: 6;
+}
+
+.seventhArticle {
+    order: 7;
+}
+
+.eighthArticle {
+    order: 8;
+}
+
+.ninthArticle {
+    order: 9;
+}
+
+.imgArticle {
+    position: relative;
+}
+
+.photoArticle {
+    display: block;
+    width: 100%;
+}
+
+.hoverImg {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.5s, visibility 0.5s ease-out;
+    opacity: 0;
+    z-index: 1;
+}
+
+.imgArticle:hover .hoverImg {
+    visibility: visible;
+    opacity: 1;
+}
+
+.imageHoverBtn {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+}
+
+.imageHoverBtn a {
+    color: white;
+}
+
+.imageHoverBtn:hover,
+.imageHoverBtn:hover a {
+    color: orange;
+    border-color: orange;
+}
+
+.descriptionArticle {
+    padding: 20px;
+}
+
+.dataArticle {
+    font-size: 12px;
+    padding-bottom: 12px;
+    color: #9ba6b0;
+}
+
+.contactWrap {
+    background-color: white;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+.contactInfo {
+    width: 550px;
+}
+
+@media screen and (max-width: 995px) {
+    .contactInfo {
+        width: 100%;
+    }
+}
+
+.contactText {
+    padding-bottom: 25px;
+}
+
+.formField {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 770px) {
+    .formField {
+        flex-direction: column;
+    }
+}
+
+label {
+    width: 150px;
+}
+
+.field {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #e0dede;
+}
+
+.field:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+.message {
+    width: 400px;
+    height: 120px;
+    border: 1px solid #e0dede;
+}
+
+.submitButton {
+    width: 250px;
+    background-color: white;
+    font-weight: bold;
+    margin-left: 150px;
+}
+
+.submitButton:hover {
+    border-color: orange;
+    color: orange;
+}
+
+@media screen and (max-width: 995px) {
+
+    .field,
+    .submitButton {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+
+    .field,
+    .submitButton {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .submitButton {
+        margin-left: 0px;
     }
 }
